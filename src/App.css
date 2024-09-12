@@ -2,6 +2,42 @@
   text-align: center;
 }
 
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #61dafb;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4a90e2;
+}
+
+
+.text-box {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  background-color: #82ffcd;
+  color: rgb(52, 52, 52);
+  cursor: pointer;
+  border: 2px solid #27ffa9;
+}
+
+.text-box::placeholder {
+  color: white;
+  opacity: 100%;
+}
+
+
+
+
+
+
+/* this part is just like the standard react stuff */
 .App-logo {
   height: 40vmin;
   pointer-events: none;

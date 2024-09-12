@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import TextBox from './Components/TextBox';
+import SubmitButton from './Components/SubmitButton';
+
+
 
 function App() {
+  const [inputValue, setInputValue] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (inputValue === 'HelloWorld!') {
+      setMessage('The word is HelloWorld!');
+    } else {
+      setMessage('The word is not HelloWorld!');
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+      <h1>Word Checker</h1>
+      <form onSubmit={handleSubmit}>
+        
+        <TextBox value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+        <br /><br />
+        
+        <SubmitButton />
+      </form>
+      <br />
+      <p style={{ fontSize: '18px', color: 'blue' }}>{message}</p>
     </div>
   );
 }
